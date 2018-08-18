@@ -9,6 +9,7 @@ const FormItem = Form.Item;
 class NormalLoginForm extends React.Component {
     handleSubmit = (e) => {
         e.preventDefault();
+        //this instance, this.props.form: form从（form.create.enhance 创造的一个）
         this.props.form.validateFields((err, values) => {
             if (!err) {
                 console.log('Received values of form: ', values);

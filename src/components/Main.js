@@ -5,6 +5,18 @@ import { Switch, Route, Redirect } from 'react-router-dom';
 import { Home } from './Home';
 
 export class Main extends React.Component {
+    getHome = () => {
+        return this.props.isLoggedIn ? <Home/> : <Redirect to="/login"/>;
+    }
+    getLogin = () => {
+        return this.props.isLoggedIn ? <Redirect to="/home"/> : <Login handleLogin={this.props.handleLogin}/>;
+    }
+    getRoot = () => {
+        return <Redirect to="/login"/>
+    }
+
+
+
     render() {
         return (
             <div className="main">
@@ -19,4 +31,5 @@ export class Main extends React.Component {
             </div>
         );
     }
+}
 
