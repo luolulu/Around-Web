@@ -2,7 +2,11 @@ import React from 'react';
 import { Modal, Button } from 'antd';
 
 export class CreatePostButton extends React.Component {
-    state = { visible: false }
+    state = {
+        ModalText: 'Content of the modal',
+        visible: false,
+        confirmLoading: false,
+    }
 
     showModal = () => {
         this.setState({
@@ -10,37 +14,41 @@ export class CreatePostButton extends React.Component {
         });
     }
 
-    handleOk = (e) => {
-        console.log(e);
+    handleOk = () => {
         this.setState({
-            visible: false,
+            ModalText: 'The modal will be closed after two seconds',
+            confirmLoading: true,
         });
+        setTimeout(() => {
+            this.setState({
+                visible: false,
+                confirmLoading: false,
+            });
+        }, 2000);
     }
 
-    handleCancel = (e) => {
-        console.log(e);
+    handleCancel = () => {
+        console.log('Clicked cancel button');
         this.setState({
             visible: false,
         });
     }
 
     render() {
+        const { visible, confirmLoading, ModalText } = this.state;
         return (
             <div>
                 <Button type="primary" onClick={this.showModal}>Create New Post</Button>
-                <Modal
-                    title="Basic Modal"
-                    visible={this.state.visible}
-                    onOk={this.handleOk}
-                    onCancel={this.handleCancel}
-                    okButtonProps={{ disabled: true }}
-                    cancelButtonProps={{ disabled: true }}
+                <Modal title="Title"
+                       visible={visible}
+                       onOk={this.handleOk}
+                       confirmLoading={confirmLoading}
+                       onCancel={this.handleCancel}
                 >
-                    <p>Some contents...</p>
-                    <p>Some contents...</p>
-                    <p>Some contents...</p>
+                    <p>{ModalText}</p>
                 </Modal>
             </div>
         );
     }
 }
+
