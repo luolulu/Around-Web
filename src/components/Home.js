@@ -4,9 +4,10 @@ import $ from 'jquery';
 import { Tabs, Button, Spin } from 'antd';
 import { GEO_OPTIONS, POS_KEY, AUTH_PREFIX, TOKEN_KEY, API_ROOT } from '../constants';
 import { Gallery } from './Gallery';
+import { CreatePostButton } from './CreatePostButton';
 
 const TabPane = Tabs.TabPane;
-const operations = <Button>Extra Action</Button>;
+const operations = <CreatePostButton/>;
 
 export class Home extends React.Component {
     state = {
@@ -93,10 +94,11 @@ export class Home extends React.Component {
     render() {
         return (
             <Tabs tabBarExtraContent={operations} className="main-tabs">
-                <TabPane tab="Posts" key="1">
+                <TabPane tab="Image Posts" key="1">
                     {this.getGalleryPanelContent()}
                 </TabPane>
-                <TabPane tab="Map" key="2">Content of tab 2</TabPane>
+                <TabPane tab="Video Posts" key="2">Content of tab 2</TabPane>
+                <TabPane tab="Map" key="3">Content of tab 3</TabPane>
             </Tabs>
         );
     }
