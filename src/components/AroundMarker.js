@@ -6,6 +6,16 @@ import {
 
 
 export class AroundMarker extends React.Component {
+    state = {
+        isOpen: false,
+    }
+    onToggleOpen = () => {
+        this.setState((prevState) => {
+            return {
+                isOpen: !prevState.isOpen,
+            }
+        });
+    }
     render() {
         return (
             <Marker
