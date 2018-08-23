@@ -4,6 +4,7 @@ import {
     withGoogleMap,
     GoogleMap,
     Marker,
+    InfoWindow,
 } from "react-google-maps";
 
 export class AroundMap extends React.Component {
@@ -15,7 +16,11 @@ export class AroundMap extends React.Component {
             >
                 <Marker
                     position={{ lat: -34.397, lng: 150.644 }}
-                />
+                >
+                    <InfoWindow>
+                        <div> info window content</div>
+                    </InfoWindow>
+                </Marker>
             </GoogleMap>
         )
     }
