@@ -36,8 +36,9 @@ export class Home extends React.Component {
     }
 
     onSuccessLoadGeoLocation = (position) => {
-        console.log(position);
+
         this.setState({ loadingGeoLocation: false, error: '' });
+        console.log(position);
         const { latitude, longitude } = position.coords;
         localStorage.setItem(POS_KEY, JSON.stringify({lat: latitude, lon: longitude}));
         this.loadNearbyPosts();
@@ -72,8 +73,9 @@ export class Home extends React.Component {
         }
     }
 
-    loadNearbyPosts = () => {
+    loadNearbyPosts = (location, radius) => {
         const { lat, lon } = JSON.parse(localStorage.getItem(POS_KEY));
+        //let range = radius? radius : 20;
         this.setState({ loadingPosts: true, error: ''});
         $.ajax({
             url: `${API_ROOT}/search?lat=${lat}&lon=${lon}&range=20`,
@@ -93,6 +95,8 @@ export class Home extends React.Component {
     }
 
     render() {
+        const operations = <CreatePostButton loadNearbyPosts={this.loadNearbyPosts}/>;
+
         return (
             <Tabs tabBarExtraContent={operations} className="main-tabs">
                 <TabPane tab="Image Posts" key="1">
@@ -107,6 +111,7 @@ export class Home extends React.Component {
                         containerElement={<div style={{ height: `600px` }} />}
                         mapElement={<div style={{ height: `100%` }} />}
                         posts={this.state.posts}
+                        loadNearbyPosts={this.loadNearbyPosts}
                     />
                 </TabPane>
             </Tabs>
