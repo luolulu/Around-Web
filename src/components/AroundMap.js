@@ -8,6 +8,14 @@ import {
 } from "react-google-maps";
 
 export class AroundMap extends React.Component {
+    prevState = {
+        isOpen: false,
+    }
+    onToggleOpen = () => {
+       return {
+           isOpen: !prevState.isOpen,
+       }
+    }
     render() {
         return (
             <GoogleMap
@@ -16,10 +24,20 @@ export class AroundMap extends React.Component {
             >
                 <Marker
                     position={{ lat: -34.397, lng: 150.644 }}
+                    onClick={this.onToggleOpen}
                 >
-                    <InfoWindow>
+                    {this.state.isOpen ? (<InfoWindow>
                         <div> info window content</div>
-                    </InfoWindow>
+                    </InfoWindow>) : null }
+                </Marker>
+
+                <Marker
+                    position={{ lat: -34.397, lng: 150.644 }}
+                    onClick={this.onToggleOpen}
+                >
+                    {this.state.isOpen ? (<InfoWindow>
+                        <div> info window content</div>
+                    </InfoWindow>) : null }
                 </Marker>
             </GoogleMap>
         )
