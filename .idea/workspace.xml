@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="5e5cd097-b585-4f68-bc86-4f4cc709789d" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/src/components/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Home.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/Home.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/Home.css" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -28,8 +29,8 @@
       <file leaf-file-name="Home.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/Home.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="267">
-              <caret line="83" column="5" selection-start-line="83" selection-start-column="5" selection-end-line="83" selection-end-column="5" />
+            <state relative-caret-position="70">
+              <caret line="95" column="8" selection-start-line="95" selection-start-column="8" selection-end-line="95" selection-end-column="8" />
               <folding>
                 <element signature="e#1#27#0" expanded="true" />
               </folding>
@@ -69,8 +70,8 @@
       <file leaf-file-name="constants.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/constants.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="30" selection-start-line="9" selection-start-column="30" selection-end-line="9" selection-end-column="30" />
+            <state relative-caret-position="75">
+              <caret line="5" column="23" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="23" />
             </state>
           </provider>
         </entry>
@@ -90,8 +91,8 @@
       <file leaf-file-name="Home.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/styles/Home.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="1" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
+            <state relative-caret-position="210">
+              <caret line="14" selection-start-line="14" selection-end-line="14" />
             </state>
           </provider>
         </entry>
@@ -162,8 +163,8 @@
         <option value="$PROJECT_DIR$/src/components/CreatePostButton.js" />
         <option value="$PROJECT_DIR$/src/components/AroundMarker.js" />
         <option value="$PROJECT_DIR$/src/styles/AroundMarker.css" />
-        <option value="$PROJECT_DIR$/src/styles/Home.css" />
         <option value="$PROJECT_DIR$/src/components/AroundMap.js" />
+        <option value="$PROJECT_DIR$/src/styles/Home.css" />
         <option value="$PROJECT_DIR$/src/components/Home.js" />
       </list>
     </option>
@@ -321,15 +322,15 @@
       <workItem from="1534085180420" duration="1276000" />
       <workItem from="1534605225764" duration="13902000" />
       <workItem from="1534817171156" duration="6552000" />
-      <workItem from="1534989869893" duration="9516000" />
+      <workItem from="1534989869893" duration="10493000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="31565000" />
+    <option name="totallyTimeSpent" value="32542000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-18" y="23" width="1424" height="706" extended-state="0" />
+    <frame x="-3" y="23" width="1424" height="706" extended-state="0" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -654,13 +655,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/constants.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="30" selection-start-line="9" selection-start-column="30" selection-end-line="9" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/App.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="301">
@@ -678,13 +672,6 @@
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/styles/Home.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="1" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
         </state>
       </provider>
     </entry>
@@ -728,10 +715,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/styles/Home.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/constants.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="23" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Home.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="267">
-          <caret line="83" column="5" selection-start-line="83" selection-start-column="5" selection-end-line="83" selection-end-column="5" />
+        <state relative-caret-position="70">
+          <caret line="95" column="8" selection-start-line="95" selection-start-column="8" selection-end-line="95" selection-end-column="8" />
           <folding>
             <element signature="e#1#27#0" expanded="true" />
           </folding>

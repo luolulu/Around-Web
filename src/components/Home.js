@@ -1,7 +1,7 @@
 
 import React from 'react';
 import $ from 'jquery';
-import { Tabs, Button, Spin } from 'antd';
+import { Tabs, Button, Spin, Row, Col } from 'antd';
 import { GEO_OPTIONS, POS_KEY, AUTH_PREFIX, TOKEN_KEY, API_ROOT } from '../constants';
 import { Gallery } from './Gallery';
 import { CreatePostButton } from './CreatePostButton';
@@ -79,16 +79,24 @@ export class Home extends React.Component {
     }
 
     getVideoPosts = () => {
-        return this.state.posts.filter((post) => post.type === 'video')
-            .map((post) => <video src={post.url} key={post.url} />);
+        return(
+            <Row gutter={32}>
+                {
+                    this.state.posts.filter((post) => post.type === 'video')
+                    .map((post) => <Col span={6}> <video src={post.url} key={post.url}/></Col>)
+                }
+
+            </Row>
+        );
+
     }
 
     loadNearbyPosts = (location, radius) => {
         const { lat, lon } = JSON.parse(localStorage.getItem(POS_KEY));
-        //let range = radius? radius : 20;
+        let range = radius? radius : 20;
         this.setState({ loadingPosts: true, error: ''});
         $.ajax({
-            url: `${API_ROOT}/search?lat=${lat}&lon=${lon}&range=20`,
+            url: `${API_ROOT}/search?lat=${lat}&lon=${lon}&range=${range}`,
             method: 'GET',
             headers: {
                 Authorization: `${AUTH_PREFIX} ${localStorage.getItem(TOKEN_KEY)}`
