@@ -48,7 +48,7 @@ export class Home extends React.Component {
         this.setState({ loadingGeoLocation: false, error: 'Failed to load geo location!' });
     }
 
-    getGalleryPanelContent = () => {
+    getGalleryPanelContent = (type) => {
         if (this.state.error) {
             return <div>{this.state.error}</div>;
         } else if (this.state.loadingGeoLocation) {
@@ -56,7 +56,16 @@ export class Home extends React.Component {
         } else if (this.state.loadingPosts) {
             return <Spin tip="Loading posts..."/>;
         } else if (this.state.posts && this.state.posts.length > 0) {
-            const images = this.state.posts.map((post) => {
+           return type === 'image' ? this.getImagePosts() : this.getVideoPosts();
+        }
+        else {
+            return <div> Found Nothing...</div>;
+        }
+    }
+
+    getImagePosts = () => {
+        const images = this.state.posts.filter((post) => post.type === 'image')
+            .map((post) => {
                 return {
                     user: post.user,
                     src: post.url,
@@ -66,11 +75,12 @@ export class Home extends React.Component {
                     caption: post.message,
                 }
             });
-            return <Gallery images={images}/>;
-        }
-        else {
-            return null;
-        }
+        return <Gallery images={images}/>;
+    }
+
+    getVideoPosts = () => {
+        return this.state.posts.filter((post) => post.type === 'video')
+            .map((post) => <video src={post.url} key={post.url} />);
     }
 
     loadNearbyPosts = (location, radius) => {
