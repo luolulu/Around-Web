@@ -55,4 +55,4 @@ class AroundMap extends React.Component {
 
 
 
-export const WrappedAroundMapForm = withScriptjs(withGoogleMap(AroundMap));
+export const WrappedAroundMap = withScriptjs(withGoogleMap(AroundMap));
